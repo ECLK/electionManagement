@@ -1,0 +1,34 @@
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\appsettings.json
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.deps.json
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.runtimeconfig.json
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.runtimeconfig.dev.json
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.dll
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.pdb
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.csprojAssemblyReference.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.AssemblyInfoInputs.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.AssemblyInfo.cs
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.csproj.CoreCompileInputs.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.RazorAssemblyInfo.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.RazorAssemblyInfo.cs
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.RazorTargetAssemblyInfo.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.dll
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.pdb
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.genruntimeconfig.cache
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\appsettings.json
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.deps.json
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.runtimeconfig.json
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.runtimeconfig.dev.json
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.dll
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.pdb
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.csprojAssemblyReference.cache
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.AssemblyInfoInputs.cache
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.AssemblyInfo.cs
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.csproj.CoreCompileInputs.cache
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.RazorAssemblyInfo.cache
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.RazorAssemblyInfo.cs
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.RazorTargetAssemblyInfo.cache
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.dll
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.pdb
+E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.genruntimeconfig.cache

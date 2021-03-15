@@ -1,0 +1,7 @@
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.csprojAssemblyReference.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.AssemblyInfoInputs.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.AssemblyInfo.cs
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.csproj.CoreCompileInputs.cache
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.MvcApplicationPartsAssemblyInfo.cs
+D:\Elections Documents\Development\Configuration Module\New\CMM_API\Cmm_API\Cmm_API\obj\Debug\net5.0\Cmm_API.MvcApplicationPartsAssemblyInfo.cache
