@@ -34,19 +34,19 @@ namespace Cmm_API.Controllers
             return obj;
         }
 
-        [HttpGet]
-        public object GetA()
-        {
-            object obj = this.operation.GetA();
-            return obj;
-        }
+        //[HttpGet]
+        //public object GetA()
+        //{
+        //    object obj = this.operation.GetA();
+        //    return obj;
+        //}
 
-        [HttpGet]
-        public object GettestHierarchy()
-        {
-            object obj = this.operation.GettestHierarchy();
-            return obj;
-        }
+        //[HttpGet]
+        //public object GettestHierarchy()
+        //{
+        //    object obj = this.operation.GettestHierarchy();
+        //    return obj;
+        //}
 
 
         

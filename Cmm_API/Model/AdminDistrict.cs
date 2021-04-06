@@ -15,6 +15,10 @@ namespace Cmm_API.Model
 
         public string admin_dis_name_ta { get; set; }
 
-        public string rev_id { get; set; }
+        public string itteration_id { get; set; }
+
+        public string province_id { get; set; }
+
+        public string ed_id { get; set; }
     }
 }

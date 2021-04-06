@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cmm_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CountingCentreController : ControllerBase
     {

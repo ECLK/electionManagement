@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2021 at 09:36 AM
+-- Generation Time: Apr 06, 2021 at 12:37 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -42,31 +42,31 @@ CREATE TABLE `admindistrict` (
 --
 
 INSERT INTO `admindistrict` (`admin_dis_id`, `admin_dis_name_en`, `admin_dis_name_si`, `admin_dis_name_ta`, `itteration_id`, `province_id`, `ed_id`) VALUES
-(1, 'Colombo', NULL, NULL, 3, 1, 1),
-(2, 'Gampaha', NULL, NULL, 3, 1, 2),
-(3, 'Kalutara', NULL, NULL, 3, 1, 3),
-(4, 'Mahanuwara', NULL, NULL, 3, 2, 4),
-(5, 'Matale', NULL, NULL, 3, 2, 5),
-(6, 'Nuwaraeliya', NULL, NULL, 3, 2, 6),
-(7, 'Galle', NULL, NULL, 3, 3, 7),
-(8, 'Matara', NULL, NULL, 3, 3, 8),
-(9, 'Hambantota', NULL, NULL, 3, 3, 9),
-(10, 'Jaffna', NULL, NULL, 3, 4, 10),
-(11, 'Kilinochchi', NULL, NULL, 3, 4, 10),
-(12, 'Mullativu', NULL, NULL, 3, 4, 11),
-(13, 'Mannar', NULL, NULL, 3, 4, 11),
-(14, 'Vavuniya', NULL, NULL, 3, 4, 11),
-(15, 'Batticaloa', NULL, NULL, 3, 5, 12),
-(16, 'Ampara', NULL, NULL, 3, 5, 13),
-(17, 'Trincomalee', NULL, NULL, 3, 5, 14),
-(18, 'Kurunegala', NULL, NULL, 3, 6, 15),
-(19, 'Puttalam', NULL, NULL, 3, 6, 16),
-(20, 'Anuradhapura', NULL, NULL, 3, 7, 17),
-(21, 'Polonnaruwa', NULL, NULL, 3, 7, 18),
-(22, 'Badulla', NULL, NULL, 3, 8, 19),
-(23, 'Moneragala', NULL, NULL, 3, 8, 20),
-(24, 'Ratnapura', NULL, NULL, 3, 9, 21),
-(25, 'Kegalle', NULL, NULL, 3, 9, 22);
+(1, 'Colombo', 'කොළඹ', NULL, 3, 1, 1),
+(2, 'Gampaha', 'ගම්පහ', NULL, 3, 1, 2),
+(3, 'Kalutara', 'කළුතර', NULL, 3, 1, 3),
+(4, 'Mahanuwara', 'මහනුවර', NULL, 3, 2, 4),
+(5, 'Matale', 'මාතලේ', NULL, 3, 2, 5),
+(6, 'Nuwaraeliya', 'නුවරඑළිය', NULL, 3, 2, 6),
+(7, 'Galle', 'ගාල්ල', NULL, 3, 3, 7),
+(8, 'Matara', 'මාතර', NULL, 3, 3, 8),
+(9, 'Hambantota', 'හම්බන්තොට', NULL, 3, 3, 9),
+(10, 'Jaffna', 'යාපනය', NULL, 3, 4, 10),
+(11, 'Kilinochchi', 'කිලිනොචිචිය', NULL, 3, 4, 10),
+(12, 'Mullativu', 'මුලතිව්', NULL, 3, 4, 11),
+(13, 'Mannar', 'මන්නාරම', NULL, 3, 4, 11),
+(14, 'Vavuniya', 'වව්නියාව', NULL, 3, 4, 11),
+(15, 'Batticaloa', 'මඩකලපුව', NULL, 3, 5, 12),
+(16, 'Ampara', 'අම්පාර', NULL, 3, 5, 13),
+(17, 'Trincomalee', 'ත්‍රිකුණාමලය', NULL, 3, 5, 14),
+(18, 'Kurunegala', 'කුරුණෑගල', NULL, 3, 6, 15),
+(19, 'Puttalam', 'පුත්තලම', NULL, 3, 6, 16),
+(20, 'Anuradhapura', 'අනුරාධපුර', NULL, 3, 7, 17),
+(21, 'Polonnaruwa', 'පොලොන්නරුව', NULL, 3, 7, 18),
+(22, 'Badulla', 'බදුල්ල', NULL, 3, 8, 19),
+(23, 'Moneragala', 'මොණරාගල', NULL, 3, 8, 20),
+(24, 'Ratnapura', 'රත්නපුර', NULL, 3, 9, 21),
+(25, 'Kegalle', 'කෑගල්ල', NULL, 3, 9, 22);
 
 -- --------------------------------------------------------
 
@@ -165,6 +165,8 @@ CREATE TABLE `election` (
   `election_name_en` varchar(240) DEFAULT NULL,
   `election_name_si` varchar(240) DEFAULT NULL,
   `election_name_ta` varchar(240) DEFAULT NULL,
+  `election_template_name` varchar(200) DEFAULT NULL,
+  `active_status` varchar(10) DEFAULT NULL,
   `itteration_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -172,11 +174,11 @@ CREATE TABLE `election` (
 -- Dumping data for table `election`
 --
 
-INSERT INTO `election` (`election_id`, `election_name_en`, `election_name_si`, `election_name_ta`, `itteration_id`) VALUES
-(1, 'Presidential Election', NULL, NULL, 3),
-(2, 'Parliamentary Election', NULL, NULL, 3),
-(3, 'Provincial Council Election', NULL, NULL, 3),
-(4, 'Local Authorities Election', NULL, NULL, 3);
+INSERT INTO `election` (`election_id`, `election_name_en`, `election_name_si`, `election_name_ta`, `election_template_name`, `active_status`, `itteration_id`) VALUES
+(1, 'Presidential Election', 'ජනාධිපතිවරණය', NULL, 'PRESIDENTIAL_ELECTION_2019', 'No', 3),
+(2, 'Parliamentary Election', 'පාර්ලිමේන්තු මැතිවරණය', NULL, 'PARLIAMENT_ELECTION_2020', 'No', 3),
+(3, 'Provincial Council Election', 'පළාත් සභා මැතිවරණය', NULL, 'PROVINCIAL_COUNCIL_ELECTION_2021', 'Yes', 3),
+(4, 'Local Authorities Election', 'පළාත් පාලන ආයතන මැතිවරණය', NULL, 'Local Authorities Election - 2021', 'No', 3);
 
 -- --------------------------------------------------------
 
@@ -197,28 +199,28 @@ CREATE TABLE `electoraldistrict` (
 --
 
 INSERT INTO `electoraldistrict` (`ed_id`, `ed_name_en`, `ed_name_si`, `ed_name_ta`, `itteration_id`) VALUES
-(1, 'Colombo', NULL, NULL, NULL),
-(2, 'Gampaha', NULL, NULL, NULL),
-(3, 'Kalutara', NULL, NULL, NULL),
-(4, 'Mahanuwara', NULL, NULL, NULL),
-(5, 'Matale', NULL, NULL, NULL),
-(6, 'Nuwaraeliya', NULL, NULL, NULL),
-(7, 'Galle', NULL, NULL, NULL),
-(8, 'Matara', NULL, NULL, NULL),
-(9, 'Hambantota', NULL, NULL, NULL),
-(10, 'Jaffna', NULL, NULL, NULL),
-(11, 'Vanni', NULL, NULL, NULL),
-(12, 'Batticaloa', NULL, NULL, NULL),
-(13, 'Digamadulla', NULL, NULL, NULL),
-(14, 'Trincomalee', NULL, NULL, NULL),
-(15, 'Kurunegala', NULL, NULL, NULL),
-(16, 'Puttalam', NULL, NULL, NULL),
-(17, 'Anuradhapura', NULL, NULL, NULL),
-(18, 'Polonnaruwa', NULL, NULL, NULL),
-(19, 'Badulla', NULL, NULL, NULL),
-(20, 'Moneragala', NULL, NULL, NULL),
-(21, 'Ratnapura', NULL, NULL, NULL),
-(22, 'Kegalle', NULL, NULL, NULL);
+(1, 'Colombo', 'කොළඹ', NULL, NULL),
+(2, 'Gampaha', 'ගම්පහ', NULL, NULL),
+(3, 'Kalutara', 'කළුතර', NULL, NULL),
+(4, 'Mahanuwara', 'මහනුවර', NULL, NULL),
+(5, 'Matale', 'මාතලේ', NULL, NULL),
+(6, 'Nuwaraeliya', 'නුවරඑළිය', NULL, NULL),
+(7, 'Galle', 'ගාල්ල', NULL, NULL),
+(8, 'Matara', 'මාතර', NULL, NULL),
+(9, 'Hambantota', 'හම්බන්තොට', NULL, NULL),
+(10, 'Jaffna', 'යාපනය', NULL, NULL),
+(11, 'Vanni', 'වන්නි', NULL, NULL),
+(12, 'Batticaloa', 'මඩකලපුව', NULL, NULL),
+(13, 'Digamadulla', 'දිගාමඩුල්ල', NULL, NULL),
+(14, 'Trincomalee', 'ත්‍රිකුණාමලය', NULL, NULL),
+(15, 'Kurunegala', 'කුරුණෑගල', NULL, NULL),
+(16, 'Puttalam', 'පුත්තලම', NULL, NULL),
+(17, 'Anuradhapura', 'අනුරාධපුර', NULL, NULL),
+(18, 'Polonnaruwa', 'පොලොන්නරුව', NULL, NULL),
+(19, 'Badulla', 'බදුල්ල', NULL, NULL),
+(20, 'Moneragala', 'මොණරාගල', NULL, NULL),
+(21, 'Ratnapura', 'රත්නපුර', NULL, NULL),
+(22, 'Kegalle', 'කෑගල්ල', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -359,20 +361,25 @@ CREATE TABLE `pollingstation` (
   `pd_id` int(11) DEFAULT NULL,
   `longitude` point DEFAULT NULL,
   `latitude` point DEFAULT NULL,
-  `cc_id` int(11) DEFAULT NULL
+  `cc_id` int(11) DEFAULT NULL,
+  `registered_normal_voters` int(11) DEFAULT NULL,
+  `registered_postal_voters` int(11) DEFAULT NULL,
+  `registered_displaced_voters` int(11) DEFAULT NULL,
+  `registered_quarantine_voters` int(11) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pollingstation`
 --
 
-INSERT INTO `pollingstation` (`ps_id`, `ps_name_en`, `ps_name_si`, `ps_name_ta`, `pd_id`, `longitude`, `latitude`, `cc_id`) VALUES
-(1, 'Mattakkuliya Sir Rasik Fareed Muslim Vidyalaya St.Maria Road Colombo 15. Hall No. 01', NULL, NULL, 1, NULL, NULL, 1),
-(2, 'Ananda Vidyalaya Modara Colombo 15. - Hall No. 03', NULL, NULL, 2, NULL, NULL, 1),
-(3, 'Mahawatta St. Anthony\'s Tamil Vidyalaya Colombo 14 - Hall No. 02', NULL, NULL, 3, NULL, NULL, 1),
-(4, 'St. Andrew\'s Maha Vidyalaya Maubrey Lane Colombo 15 - Hall No.01', NULL, NULL, 4, NULL, NULL, 1),
-(5, 'Muwadora Uyana Community Hall Colombo 15', NULL, NULL, 5, NULL, NULL, 2),
-(6, 'President Maha Vidyalaya Alwis Place Colombo 13 - Hall No.01', NULL, NULL, 6, NULL, NULL, 2);
+INSERT INTO `pollingstation` (`ps_id`, `ps_name_en`, `ps_name_si`, `ps_name_ta`, `pd_id`, `longitude`, `latitude`, `cc_id`, `registered_normal_voters`, `registered_postal_voters`, `registered_displaced_voters`, `registered_quarantine_voters`, `status`) VALUES
+(1, 'Mattakkuliya Sir Rasik Fareed Muslim Vidyalaya St.Maria Road Colombo 15. Hall No. 01', NULL, NULL, 1, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1),
+(2, 'Ananda Vidyalaya Modara Colombo 15. - Hall No. 03', NULL, NULL, 2, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1),
+(3, 'Mahawatta St. Anthony\'s Tamil Vidyalaya Colombo 14 - Hall No. 02', NULL, NULL, 3, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1),
+(4, 'St. Andrew\'s Maha Vidyalaya Maubrey Lane Colombo 15 - Hall No.01', NULL, NULL, 4, NULL, NULL, 1, NULL, NULL, NULL, NULL, 1),
+(5, 'Muwadora Uyana Community Hall Colombo 15', NULL, NULL, 5, NULL, NULL, 2, NULL, NULL, NULL, NULL, 1),
+(6, 'President Maha Vidyalaya Alwis Place Colombo 13 - Hall No.01', NULL, NULL, 6, NULL, NULL, 2, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -393,15 +400,15 @@ CREATE TABLE `province` (
 --
 
 INSERT INTO `province` (`province_id`, `province_name_en`, `province_name_si`, `province_name_ta`, `itteration_id`) VALUES
-(1, 'Western', NULL, NULL, 3),
-(2, 'Central', NULL, NULL, 3),
-(3, 'Southern', NULL, NULL, 3),
-(4, 'Northern', NULL, NULL, 3),
-(5, 'Eastern', NULL, NULL, 3),
-(6, 'North Western', NULL, NULL, 3),
-(7, 'North Central', NULL, NULL, 3),
-(8, 'Uva', NULL, NULL, 3),
-(9, 'Sabaragamuwa ', NULL, NULL, 3);
+(1, 'Western', 'බස්නාහිර', NULL, 3),
+(2, 'Central', 'මධ්‍යම', NULL, 3),
+(3, 'Southern', 'දකුණු', NULL, 3),
+(4, 'Northern', 'උතුරු', NULL, 3),
+(5, 'Eastern', 'නැගෙනහිර', NULL, 3),
+(6, 'North Western', 'වයඹ', NULL, 3),
+(7, 'North Central', 'උතුරුමැද', NULL, 3),
+(8, 'Uva', 'ඌව', NULL, 3),
+(9, 'Sabaragamuwa ', 'සබරගමුව', NULL, 3);
 
 -- --------------------------------------------------------
 

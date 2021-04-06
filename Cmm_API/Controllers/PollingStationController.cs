@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cmm_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class PollingStationController : ControllerBase
     {
@@ -26,6 +26,15 @@ namespace Cmm_API.Controllers
         public object GetPollingStation()
         {
             object obj = this.operation.GetAll("PollingStation");
+            return obj;
+        }
+
+
+        //GET: api/<PollingStationController>
+        [HttpGet]
+        public object GetPollingStationsDatasetAPI()
+        {
+            object obj = this.operation.GetPollingStationsDatasetAPI();
             return obj;
         }
 
