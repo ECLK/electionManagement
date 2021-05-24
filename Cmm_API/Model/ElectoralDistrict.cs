@@ -16,5 +16,9 @@ namespace Cmm_API.Model
         public string ed_name_ta { get; set; }
 
         public string rev_id { get; set; }
+
+        public int number_of_seats { get; set; }
+
+        public List<ElectoralDistrict> ListofPollingDivisionModel { get; set; }
     }
 }

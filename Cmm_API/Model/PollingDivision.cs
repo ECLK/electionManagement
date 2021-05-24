@@ -15,6 +15,6 @@ namespace Cmm_API.Model
 
         public string pdiv_name_ta { get; set; }
 
-        public string rev_id { get; set; }
+        //public string rev_id { get; set; }
     }
 }

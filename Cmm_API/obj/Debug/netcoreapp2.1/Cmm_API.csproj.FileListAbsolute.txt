@@ -22,7 +22,6 @@ E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.runtimeconfig.j
 E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.runtimeconfig.dev.json
 E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.dll
 E:\Cmm_API-01-27\Cmm_API\Cmm_API\bin\Debug\netcoreapp2.1\Cmm_API.pdb
-E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.csprojAssemblyReference.cache
 E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.AssemblyInfoInputs.cache
 E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.AssemblyInfo.cs
 E:\Cmm_API-01-27\Cmm_API\Cmm_API\obj\Debug\netcoreapp2.1\Cmm_API.csproj.CoreCompileInputs.cache

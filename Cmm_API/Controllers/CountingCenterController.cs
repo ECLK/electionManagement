@@ -36,30 +36,5 @@ namespace Cmm_API.Controllers
             return obj;
         }
 
-
-        //[HttpGet("{id}")]
-        //public object GetCountingDetails(int id)
-       // {
-            //object obj = this.operation.GetCountingDetails(id);
-            //return obj;
-          //}
-
-        // POST api/<CountingCenterController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<CountingCenterController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<CountingCenterController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)    
-        {
-        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Cmm_API.Model;
+using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,68 @@ namespace Cmm_API.Operation
             return dtbl;
         }
 
+        //public DataSet GetAll_ds(string tblname)
+        //{
+        //    DataSet ds = new DataSet();
+        //    string query1 = "SELECT * FROM " + tblname;
+        //    MySqlDataAdapter da = new MySqlDataAdapter(query1, this.Connection());
+        //    da.Fill(ds);
+        //    return ds;
+        //}
+
+        public DataTable GetAll_table(string tblname)
+        {
+            DataTable ds = new DataTable();
+            string query1 = "SELECT * FROM " + tblname;
+            MySqlDataAdapter da = new MySqlDataAdapter(query1, this.Connection());
+            da.Fill(ds);
+            return ds;
+        }
+
+
+        //public DataTable Getbyid(string tblname, string id, string colum)
+        //{
+        //    DataTable ds = new DataTable();
+        //    string query1 = "SELECT * FROM " + tblname + "Where " + colum + "=" + id;
+        //    MySqlDataAdapter da = new MySqlDataAdapter(query1, this.Connection());
+        //    da.Fill(ds);
+        //    return ds;
+        //}
+
+        public object GetNumberofSeatsDatasetAPI( string numberofseat)
+        {
+            DataTable dtbl2 = new DataTable();
+            string query = " SELECT Province.province_name_en, ElectoralDistrict.ed_name_en, ElectoralDistrict.number_of_seats FROM " +
+                           " Province INNER JOIN itteration ON itteration.itteration_id = Province.itteration_id " +
+                           " INNER JOIN  AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                           " INNER JOIN ElectoralDistrict ON AdminDistrict.ed_id = ElectoralDistrict.ed_id ";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, this.Connection());
+            da.Fill(dtbl2);
+            return dtbl2;
+        }
+
         
+        public object GetPartyDatasetAPI()
+        {
+            DataTable dtbl2 = new DataTable();
+            string query = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, Party.party_name, FROM Province ";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, this.Connection());
+            da.Fill(dtbl2);
+            return dtbl2;
+        }
+
+        public DataTable GetSeatsDataAPI()
+        {
+            DataTable dtbl2 = new DataTable();
+            string query = " SELECT Province.province_name_en, ElectoralDistrict.ed_name_en, ElectoralDistrict.number_of_seats FROM "+
+                           " Province INNER JOIN itteration ON itteration.itteration_id = Province.itteration_id " +
+                           " INNER JOIN  AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                           " INNER JOIN ElectoralDistrict ON AdminDistrict.ed_id = ElectoralDistrict.ed_id ";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, this.Connection());
+            da.Fill(dtbl2);
+            return dtbl2;
+        }
+
         public object GetHierarchy()
         {
             DataTable dtbl = new DataTable();

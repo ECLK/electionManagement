@@ -2,8 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Cmm_API.Controllers
 {
@@ -25,6 +28,40 @@ namespace Cmm_API.Controllers
             object obj = this.operation.GetAll("AdminDistrict");
             return obj;
         }
+
+        //[HttpGet]
+        //public object Getsheets()
+        //{
+        //    string[,] districtdata;
+        //    DataTable province = this.operation.GetAll_table("province");
+        //    for(int i=0; i < province.Rows.Count; i++)
+        //    {
+        //        string province_id = province.Rows[i]["province_id"].ToString();
+        //        DataTable distri = this.operation.Getbyid("province",province_id, "province_id");
+        //        for (int j = 0; j < distri.Rows.Count; j++)
+        //        {
+        //            districtdata = new string[,]
+        //            {
+        //               { province.Rows[i]["province_name_en"].ToString(),distri.Rows[j]["admin_dis_name_en"].ToString() }
+        //            };
+        //        }
+        //    }
+
+        //    return "";
+        //}
+
+        //[HttpGet]
+        //public object Getsheets1()
+        //{
+        //    DataTable province = this.operation.GetAll_table("province");
+        //    string JSONString = string.Empty;
+        //    JSONString = JsonConvert.SerializeObject(province);
+
+        //    var jo = JObject.Parse(JSONString);
+        //    return jo;
+        //}
+
+
 
         // GET api/<AdminDistrictController>/5
         [HttpGet]

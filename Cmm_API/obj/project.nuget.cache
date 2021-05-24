@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5P1JLTCZgkFMilsBbfbGdTSZxckzWi6DF4wBzjIR++9VNed8hGaiQGZucG7+rbDlud7D/PQ9WSCz3PKFu7q3eA==",
+  "dgSpecHash": "B5EzC0Z7ge2rRDiHjAY89qfIsOLBbsge4dzWbcMdiW+6NT1cOg7AoKfSiXS32J868lge1spUlmsKG48LTvE8OQ==",
   "success": true,
   "projectFilePath": "E:\\Cmm_API-01-27\\Cmm_API\\Cmm_API\\Cmm_API.csproj",
   "expectedPackageFiles": [
@@ -177,7 +177,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mysql.data\\8.0.23\\mysql.data.8.0.23.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
