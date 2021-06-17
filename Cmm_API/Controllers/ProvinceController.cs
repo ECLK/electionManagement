@@ -42,9 +42,9 @@ namespace Cmm_API.Controllers
         //}
 
         [HttpGet]
-        public object GetPartyDatasetAPI()
+        public object GetPartyDataAPI()
         {
-            object obj = this.operation.GetPartyDatasetAPI();
+            object obj = this.operation.GetPartyDataAPI();
             return obj;
         }
 
@@ -76,6 +76,34 @@ namespace Cmm_API.Controllers
             //Console.Write(numofseat);
 
             return numofseat;
+        }
+
+        [HttpGet]
+        public string GetPartyDataSetAPI()
+        {
+            var Partylist = this.operation.GetPartyDataAPI();
+
+            if (Partylist.Rows.Count <= 0)
+                return null;
+
+            var provinceObj = new List<Province>();
+
+            List<DataRow> drList = new List<DataRow>();
+            foreach (DataRow dr in Partylist.Rows)
+            {
+                drList.Add(dr);
+            }
+
+            var provinces2 = drList.GroupBy(x => x.ItemArray[0]);
+
+            foreach (var item in provinces2)
+            {
+                provinceObj.Add(new CommonMethodController().GetPartyDetails(item.ToList()));
+            }
+
+            var partydata = JsonConvert.SerializeObject(provinceObj);
+
+            return partydata;
         }
 
 

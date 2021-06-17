@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2021 at 12:37 PM
+-- Generation Time: Jun 17, 2021 at 09:01 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -76,7 +76,8 @@ INSERT INTO `admindistrict` (`admin_dis_id`, `admin_dis_name_en`, `admin_dis_nam
 
 CREATE TABLE `countingcentre` (
   `cc_id` int(11) NOT NULL,
-  `cc_name` int(11) DEFAULT NULL,
+  `cc_name` varchar(25) DEFAULT NULL,
+  `vote_type` varchar(50) DEFAULT NULL,
   `pdiv_id` int(11) DEFAULT NULL,
   `dc_id` int(11) DEFAULT NULL,
   `election_id` int(11) DEFAULT NULL
@@ -86,25 +87,25 @@ CREATE TABLE `countingcentre` (
 -- Dumping data for table `countingcentre`
 --
 
-INSERT INTO `countingcentre` (`cc_id`, `cc_name`, `pdiv_id`, `dc_id`, `election_id`) VALUES
-(1, 1, 1, 1, 3),
-(2, 2, 1, 1, 3),
-(3, 3, 1, 1, 3),
-(4, 4, 1, 1, 3),
-(5, 5, 1, 1, 3),
-(6, 6, 1, 1, 3),
-(7, 7, 1, 1, 3),
-(8, 8, 1, 1, 3),
-(9, 9, 1, 1, 3),
-(10, 10, 1, 1, 3),
-(11, 11, 1, 1, 3),
-(12, 12, 1, 1, 3),
-(13, 13, 1, 1, 3),
-(14, 14, 1, 1, 3),
-(15, 15, 1, 1, 3),
-(16, 16, 1, 1, 3),
-(17, 17, 2, 1, 3),
-(18, 18, 2, 1, 3);
+INSERT INTO `countingcentre` (`cc_id`, `cc_name`, `vote_type`, `pdiv_id`, `dc_id`, `election_id`) VALUES
+(1, '1', 'Normal', 1, 1, 3),
+(2, '2', 'Normal', 1, 1, 3),
+(3, '3', 'Normal', 1, 1, 3),
+(4, '4', 'Normal', 1, 1, 3),
+(5, '5', 'Normal', 1, 1, 3),
+(6, '6', 'Normal', 1, 1, 3),
+(7, '7', 'Normal', 1, 1, 3),
+(8, '8', 'Normal', 1, 1, 3),
+(9, '9', 'Normal', 1, 1, 3),
+(10, '10', 'Normal', 1, 1, 3),
+(11, '11', 'Normal', 1, 1, 3),
+(12, '12', 'Normal', 1, 1, 3),
+(13, '13', 'Normal', 1, 1, 3),
+(14, '14', 'Normal', 1, 1, 3),
+(15, '15', 'Normal', 1, 1, 3),
+(16, '16', 'Normal', 1, 1, 3),
+(17, '17', 'Normal', 2, 1, 3),
+(18, '18', 'Normal', 2, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -140,7 +141,7 @@ CREATE TABLE `districtcentre` (
   `dc_name_si` varchar(150) DEFAULT NULL,
   `dc_name_ta` varchar(150) DEFAULT NULL,
   `current_elec_id` int(11) DEFAULT NULL,
-  `pdiv_id` int(11) DEFAULT NULL,
+  `ed_id` int(11) DEFAULT NULL,
   `longitude` point DEFAULT NULL,
   `latitude` point DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -149,10 +150,15 @@ CREATE TABLE `districtcentre` (
 -- Dumping data for table `districtcentre`
 --
 
-INSERT INTO `districtcentre` (`dc_id`, `dc_name_en`, `dc_name_si`, `dc_name_ta`, `current_elec_id`, `pdiv_id`, `longitude`, `latitude`) VALUES
-(1, 'Royal College Colombo 07', NULL, NULL, 3, NULL, NULL, NULL),
-(2, 'D.S.Senanayake College', NULL, NULL, 3, NULL, NULL, NULL),
-(3, 'Isipathana College', NULL, NULL, 3, NULL, NULL, NULL);
+INSERT INTO `districtcentre` (`dc_id`, `dc_name_en`, `dc_name_si`, `dc_name_ta`, `current_elec_id`, `ed_id`, `longitude`, `latitude`) VALUES
+(1, 'Royal College Colombo 07', NULL, NULL, 3, 1, NULL, NULL),
+(2, 'D.S.Senanayake College', NULL, NULL, 3, 1, NULL, NULL),
+(3, 'Isipathana College', NULL, NULL, 3, 1, NULL, NULL),
+(4, 'Bandaranayaka College Gampaha', NULL, NULL, 3, 2, NULL, NULL),
+(5, 'Gampaha Medical Faculty Main Hall', NULL, NULL, 3, 2, NULL, NULL),
+(6, 'Gampaha District Secretary complex', NULL, NULL, 3, 2, NULL, NULL),
+(7, 'Kalutara Vidyalaya', NULL, NULL, 3, 3, NULL, NULL),
+(8, 'Panadura Municipal Council', NULL, NULL, 3, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -191,6 +197,7 @@ CREATE TABLE `electoraldistrict` (
   `ed_name_en` varchar(50) DEFAULT NULL,
   `ed_name_si` varchar(50) DEFAULT NULL,
   `ed_name_ta` varchar(50) DEFAULT NULL,
+  `number_of_seats` int(11) DEFAULT NULL,
   `itteration_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -198,29 +205,29 @@ CREATE TABLE `electoraldistrict` (
 -- Dumping data for table `electoraldistrict`
 --
 
-INSERT INTO `electoraldistrict` (`ed_id`, `ed_name_en`, `ed_name_si`, `ed_name_ta`, `itteration_id`) VALUES
-(1, 'Colombo', 'කොළඹ', NULL, NULL),
-(2, 'Gampaha', 'ගම්පහ', NULL, NULL),
-(3, 'Kalutara', 'කළුතර', NULL, NULL),
-(4, 'Mahanuwara', 'මහනුවර', NULL, NULL),
-(5, 'Matale', 'මාතලේ', NULL, NULL),
-(6, 'Nuwaraeliya', 'නුවරඑළිය', NULL, NULL),
-(7, 'Galle', 'ගාල්ල', NULL, NULL),
-(8, 'Matara', 'මාතර', NULL, NULL),
-(9, 'Hambantota', 'හම්බන්තොට', NULL, NULL),
-(10, 'Jaffna', 'යාපනය', NULL, NULL),
-(11, 'Vanni', 'වන්නි', NULL, NULL),
-(12, 'Batticaloa', 'මඩකලපුව', NULL, NULL),
-(13, 'Digamadulla', 'දිගාමඩුල්ල', NULL, NULL),
-(14, 'Trincomalee', 'ත්‍රිකුණාමලය', NULL, NULL),
-(15, 'Kurunegala', 'කුරුණෑගල', NULL, NULL),
-(16, 'Puttalam', 'පුත්තලම', NULL, NULL),
-(17, 'Anuradhapura', 'අනුරාධපුර', NULL, NULL),
-(18, 'Polonnaruwa', 'පොලොන්නරුව', NULL, NULL),
-(19, 'Badulla', 'බදුල්ල', NULL, NULL),
-(20, 'Moneragala', 'මොණරාගල', NULL, NULL),
-(21, 'Ratnapura', 'රත්නපුර', NULL, NULL),
-(22, 'Kegalle', 'කෑගල්ල', NULL, NULL);
+INSERT INTO `electoraldistrict` (`ed_id`, `ed_name_en`, `ed_name_si`, `ed_name_ta`, `number_of_seats`, `itteration_id`) VALUES
+(1, 'Colombo', 'කොළඹ', NULL, 19, 3),
+(2, 'Gampaha', 'ගම්පහ', NULL, 18, 3),
+(3, 'Kalutara', 'කළුතර', NULL, 10, 3),
+(4, 'Mahanuwara', 'මහනුවර', NULL, 12, 3),
+(5, 'Matale', 'මාතලේ', NULL, 5, 3),
+(6, 'Nuwaraeliya', 'නුවරඑළිය', NULL, 8, 3),
+(7, 'Galle', 'ගාල්ල', NULL, 9, 3),
+(8, 'Matara', 'මාතර', NULL, 7, 3),
+(9, 'Hambantota', 'හම්බන්තොට', NULL, 7, 3),
+(10, 'Jaffna', 'යාපනය', NULL, 7, 3),
+(11, 'Vanni', 'වන්නි', NULL, 6, 3),
+(12, 'Batticaloa', 'මඩකලපුව', NULL, 5, 3),
+(13, 'Digamadulla', 'දිගාමඩුල්ල', NULL, 7, 3),
+(14, 'Trincomalee', 'ත්‍රිකුණාමලය', NULL, 4, 3),
+(15, 'Kurunegala', 'කුරුණෑගල', NULL, 15, 3),
+(16, 'Puttalam', 'පුත්තලම', NULL, 8, 3),
+(17, 'Anuradhapura', 'අනුරාධපුර', NULL, 9, 3),
+(18, 'Polonnaruwa', 'පොලොන්නරුව', NULL, 5, 3),
+(19, 'Badulla', 'බදුල්ල', NULL, 9, 3),
+(20, 'Moneragala', 'මොණරාගල', NULL, 6, 3),
+(21, 'Ratnapura', 'රත්නපුර', NULL, 11, 3),
+(22, 'Kegalle', 'කෑගල්ල', NULL, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -256,6 +263,37 @@ CREATE TABLE `localauthority` (
   `la_name_ta` varchar(150) DEFAULT NULL,
   `itteration_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `party`
+--
+
+CREATE TABLE `party` (
+  `party_id` int(11) NOT NULL,
+  `party_name` varchar(200) DEFAULT NULL,
+  `party_abbreviation` varchar(50) DEFAULT NULL,
+  `party_symbol` varchar(100) DEFAULT NULL,
+  `color` varchar(50) DEFAULT NULL,
+  `admin_dis_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `party`
+--
+
+INSERT INTO `party` (`party_id`, `party_name`, `party_abbreviation`, `party_symbol`, `color`, `admin_dis_id`) VALUES
+(1, 'Party A', 'PA', 'Symbol 1', 'Color 1', 1),
+(2, 'Party B', 'PB', 'Symbol 2', 'Color 2', 1),
+(3, 'Party C', 'PC', 'Symbol 3', 'Color 3', 1),
+(4, 'Colombo - Independent Group 1', 'IND01_D01', 'Symbol 4', 'Color 4', 1),
+(5, 'Colombo - Independent Group 2', 'IND02_D01', 'Symbol 5', 'Color 5', 1),
+(6, 'Party A', 'PA', 'Symbol 1', 'Color 1', 2),
+(7, 'Party D', 'PD', 'Symbol 6', 'Color 6', 2),
+(8, 'Gampaha - Independent Group 1', 'IND01_D02', 'Symbol 7', 'Color 7', 2),
+(9, 'Party E', 'PE', 'Symbol 8', 'Color 8', 3),
+(10, 'Kalutara - Independent Group 1', 'IND01_D03', 'Symbol 9', 'Color 9', 3);
 
 -- --------------------------------------------------------
 
@@ -301,6 +339,7 @@ CREATE TABLE `pollingdivision` (
   `pdiv_name_en` varchar(50) DEFAULT NULL,
   `pdiv_name_si` varchar(50) DEFAULT NULL,
   `pdiv_name_ta` varchar(50) DEFAULT NULL,
+  `dc_id` int(11) DEFAULT NULL,
   `ed_id` int(11) DEFAULT NULL,
   `itteration_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -309,43 +348,43 @@ CREATE TABLE `pollingdivision` (
 -- Dumping data for table `pollingdivision`
 --
 
-INSERT INTO `pollingdivision` (`pdiv_id`, `pdiv_name_en`, `pdiv_name_si`, `pdiv_name_ta`, `ed_id`, `itteration_id`) VALUES
-(1, 'Colombo North', NULL, NULL, 1, 3),
-(2, 'Colombo Central', NULL, NULL, 1, 3),
-(3, 'Borella', NULL, NULL, 1, 3),
-(4, 'Colombo East', NULL, NULL, 1, 3),
-(5, 'Colombo West', NULL, NULL, 1, 3),
-(6, 'Dehiwala', NULL, NULL, 1, 3),
-(7, 'Ratmalana', NULL, NULL, 1, 3),
-(8, 'Kolonnawa', NULL, NULL, 1, 3),
-(9, 'Kotte', NULL, NULL, 1, 3),
-(10, 'Kaduwela', NULL, NULL, 1, 3),
-(11, 'Avissawella', NULL, NULL, 1, 3),
-(12, 'Homagama', NULL, NULL, 1, 3),
-(13, 'Maharagama', NULL, NULL, 1, 3),
-(14, 'Kesbewa', NULL, NULL, 1, 3),
-(15, 'Moratuwa', NULL, NULL, 1, 3),
-(16, 'Wattala', NULL, NULL, 2, 3),
-(17, 'Negambo', NULL, NULL, 2, 3),
-(18, 'Katana', NULL, NULL, 2, 3),
-(19, 'Diulapitiya', NULL, NULL, 2, 3),
-(20, 'Mirigama', NULL, NULL, 2, 3),
-(21, 'Minuwangoda', NULL, NULL, 2, 3),
-(22, 'Attanagalla', NULL, NULL, 2, 3),
-(23, 'Gampaha', NULL, NULL, 2, 3),
-(24, 'Ja-Ela', NULL, NULL, 2, 3),
-(25, 'Mahara', NULL, NULL, 2, 3),
-(26, 'Dompe', NULL, NULL, 2, 3),
-(27, 'Biyagama', NULL, NULL, 2, 2),
-(28, 'Kelaniya', NULL, NULL, 2, 3),
-(29, 'Panadura', NULL, NULL, 3, 3),
-(30, 'Bandaragama', NULL, NULL, 3, 3),
-(31, 'Horana', NULL, NULL, 3, 3),
-(32, 'Bulathsinhala', NULL, NULL, 3, 3),
-(33, 'Matugama', NULL, NULL, 3, 3),
-(34, 'Kalutara', NULL, NULL, 3, 3),
-(35, 'Beruwala', NULL, NULL, 3, 3),
-(36, 'H-Agalawatta', NULL, NULL, 3, 3);
+INSERT INTO `pollingdivision` (`pdiv_id`, `pdiv_name_en`, `pdiv_name_si`, `pdiv_name_ta`, `dc_id`, `ed_id`, `itteration_id`) VALUES
+(1, 'Colombo North', NULL, NULL, 1, 1, 3),
+(2, 'Colombo Central', NULL, NULL, 1, 1, 3),
+(3, 'Borella', NULL, NULL, 1, 1, 3),
+(4, 'Colombo East', NULL, NULL, 1, 1, 3),
+(5, 'Colombo West', NULL, NULL, 1, 1, 3),
+(6, 'Dehiwala', NULL, NULL, 2, 1, 3),
+(7, 'Ratmalana', NULL, NULL, 2, 1, 3),
+(8, 'Kolonnawa', NULL, NULL, 2, 1, 3),
+(9, 'Kotte', NULL, NULL, 2, 1, 3),
+(10, 'Kaduwela', NULL, NULL, 2, 1, 3),
+(11, 'Avissawella', NULL, NULL, 3, 1, 3),
+(12, 'Homagama', NULL, NULL, 3, 1, 3),
+(13, 'Maharagama', NULL, NULL, 3, 1, 3),
+(14, 'Kesbewa', NULL, NULL, 3, 1, 3),
+(15, 'Moratuwa', NULL, NULL, 3, 1, 3),
+(16, 'Wattala', NULL, NULL, 4, 2, 3),
+(17, 'Negambo', NULL, NULL, 4, 2, 3),
+(18, 'Katana', NULL, NULL, 4, 2, 3),
+(19, 'Diulapitiya', NULL, NULL, 5, 2, 3),
+(20, 'Mirigama', NULL, NULL, 5, 2, 3),
+(21, 'Minuwangoda', NULL, NULL, 5, 2, 3),
+(22, 'Attanagalla', NULL, NULL, 6, 2, 3),
+(23, 'Gampaha', NULL, NULL, 6, 2, 3),
+(24, 'Ja-Ela', NULL, NULL, 6, 2, 3),
+(25, 'Mahara', NULL, NULL, 6, 2, 3),
+(26, 'Dompe', NULL, NULL, NULL, 2, 3),
+(27, 'Biyagama', NULL, NULL, NULL, 2, 2),
+(28, 'Kelaniya', NULL, NULL, NULL, 2, 3),
+(29, 'Panadura', NULL, NULL, NULL, 3, 3),
+(30, 'Bandaragama', NULL, NULL, NULL, 3, 3),
+(31, 'Horana', NULL, NULL, NULL, 3, 3),
+(32, 'Bulathsinhala', NULL, NULL, NULL, 3, 3),
+(33, 'Matugama', NULL, NULL, NULL, 3, 3),
+(34, 'Kalutara', NULL, NULL, NULL, 3, 3),
+(35, 'Beruwala', NULL, NULL, NULL, 3, 3),
+(36, 'H-Agalawatta', NULL, NULL, NULL, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -479,6 +518,12 @@ ALTER TABLE `localauthority`
   ADD PRIMARY KEY (`la_id`);
 
 --
+-- Indexes for table `party`
+--
+ALTER TABLE `party`
+  ADD PRIMARY KEY (`party_id`);
+
+--
 -- Indexes for table `pollingdistrict`
 --
 ALTER TABLE `pollingdistrict`
@@ -534,7 +579,7 @@ ALTER TABLE `current_election`
 -- AUTO_INCREMENT for table `districtcentre`
 --
 ALTER TABLE `districtcentre`
-  MODIFY `dc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `dc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `election`
@@ -559,6 +604,12 @@ ALTER TABLE `itteration`
 --
 ALTER TABLE `localauthority`
   MODIFY `la_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `party`
+--
+ALTER TABLE `party`
+  MODIFY `party_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pollingdistrict`

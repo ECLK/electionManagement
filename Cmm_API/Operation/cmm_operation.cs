@@ -82,11 +82,29 @@ namespace Cmm_API.Operation
             return dtbl2;
         }
 
-        
-        public object GetPartyDatasetAPI()
+
+        public object GetPartyDataSetAPI(string partydata)
         {
             DataTable dtbl2 = new DataTable();
-            string query = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, Party.party_name, FROM Province ";
+            string query = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, Party.party_name, " +
+                           " Party.party_abbreviation, Party.party_symbol, Party.color FROM " + "" +
+                           " Province INNER JOIN itteration ON itteration.itteration_id = Province.itteration_id " +
+                           " INNER JOIN  AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                           " INNER JOIN party ON AdminDistrict.admin_dis_id = party.admin_dis_id  ";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, this.Connection());
+            da.Fill(dtbl2);
+            return dtbl2;
+        }
+
+
+        public DataTable GetPartyDataAPI()
+        {
+            DataTable dtbl2 = new DataTable();
+            string query = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, Party.party_name, " +
+                           " Party.party_abbreviation, Party.party_symbol, Party.color FROM " + "" +
+                           " Province INNER JOIN itteration ON itteration.itteration_id = Province.itteration_id " +
+                           " INNER JOIN  AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                           " INNER JOIN party ON AdminDistrict.admin_dis_id = party.admin_dis_id  ";
             MySqlDataAdapter da = new MySqlDataAdapter(query, this.Connection());
             da.Fill(dtbl2);
             return dtbl2;
@@ -164,6 +182,26 @@ namespace Cmm_API.Operation
             return dtbl;
         }
 
+
+        public object GetPollingStationsTestAPI()
+        {
+            DataTable dtbl = new DataTable();
+            string query = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, DistrictCentre.dc_name_en, PollingDivision.pdiv_name_en," +
+                           " PollingDistrict.pd_num, PollingStation.ps_name_en,PollingStation.ps_name_si, PollingStation.ps_name_ta, PollingStation.registered_normal_voters, " +
+                           " PollingStation.registered_postal_voters, PollingStation.registered_displaced_voters, " +
+                           " PollingStation.registered_quarantine_voters " +
+                           " FROM Province INNER JOIN AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                           " INNER JOIN ElectoralDistrict ON AdminDistrict.ed_id = ElectoralDistrict.ed_id " +
+                           " INNER JOIN DistrictCentre ON ElectoralDistrict.ed_id = DistrictCentre.ed_id " +
+                           " INNER JOIN PollingDivision ON  DistrictCentre.dc_id = PollingDivision.dc_id" +
+                           " INNER JOIN PollingDistrict ON  PollingDivision.pdiv_id = PollingDistrict.pdiv_id " +
+                           " INNER JOIN PollingStation ON  PollingDistrict.pd_id = PollingStation.pd_id ";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(query, this.Connection());
+            da.Fill(dtbl);
+            return dtbl;
+        }
+
         public object GetCountingCentreDetails(int id)
         {
             DataTable dtbl = new DataTable();
@@ -192,6 +230,40 @@ namespace Cmm_API.Operation
 
         }
 
+
+
+        public DataTable GetPostalCountingCenterAPI()
+        {
+            DataTable dtbln = new DataTable();
+
+            string query2 = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, DistrictCentre.dc_name_en, CountingCentre.cc_name, CountingCentre.vote_type" +
+                          " FROM Province INNER JOIN AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                          " INNER JOIN ElectoralDistrict ON AdminDistrict.ed_id = ElectoralDistrict.ed_id " +
+                          " INNER JOIN DistrictCentre ON ElectoralDistrict.ed_id = DistrictCentre.ed_id " +
+                          " INNER JOIN CountingCentre ON  DistrictCentre.dc_id = CountingCentre.dc_id";
+
+            MySqlDataAdapter da1 = new MySqlDataAdapter(query2, this.Connection());
+            da1.Fill(dtbln);
+            return dtbln;
+        }
+
+
+        public object GetPostalCountingCenterDatasetAPI(string countingtype)
+        {
+            DataTable dtbln = new DataTable();
+
+            string query2 = " SELECT Province.province_name_en, AdminDistrict.admin_dis_name_en, DistrictCentre.dc_name_en, CountingCentre.cc_name, CountingCentre.vote_type" +
+                          " FROM Province INNER JOIN AdminDistrict ON Province.province_id = AdminDistrict.province_id " +
+                          " INNER JOIN ElectoralDistrict ON AdminDistrict.ed_id = ElectoralDistrict.ed_id " +
+                          " INNER JOIN DistrictCentre ON ElectoralDistrict.ed_id = DistrictCentre.ed_id " +
+                          " INNER JOIN CountingCentre ON  DistrictCentre.dc_id = CountingCentre.dc_id";
+
+            MySqlDataAdapter da1 = new MySqlDataAdapter(query2, this.Connection());
+            da1.Fill(dtbln);
+            return dtbln;
+        }
+
+
         //public object GettestHierarchy()
         //{
         //    DataTable dtbl1 = new DataTable();
@@ -212,19 +284,19 @@ namespace Cmm_API.Operation
 
         //}
 
-       // public object GetA()
-       //{
-       //    DataTable dtbl = new DataTable();
-       //    string query1 = "SELECT ElectoralDistrict.ed_name_en, PollingDivision.pdiv_name_en , PollingDistrict.pd_num , PollingStation.ps_name_en FROM " +
-       //         " ElectoralDistrict INNER JOIN PollingDivision ON ElectoralDistrict.ed_id = PollingDivision.ed_id " +
-       //        " INNER JOIN PollingDistrict ON PollingDivision.pdiv_id = PollingDistrict.pdiv_id " +
-       //         " INNER JOIN PollingStation ON  PollingDistrict.pd_id = PollingStation.pd_id";
+        // public object GetA()
+        //{
+        //    DataTable dtbl = new DataTable();
+        //    string query1 = "SELECT ElectoralDistrict.ed_name_en, PollingDivision.pdiv_name_en , PollingDistrict.pd_num , PollingStation.ps_name_en FROM " +
+        //         " ElectoralDistrict INNER JOIN PollingDivision ON ElectoralDistrict.ed_id = PollingDivision.ed_id " +
+        //        " INNER JOIN PollingDistrict ON PollingDivision.pdiv_id = PollingDistrict.pdiv_id " +
+        //         " INNER JOIN PollingStation ON  PollingDistrict.pd_id = PollingStation.pd_id";
 
 
-       //    MySqlDataAdapter da = new MySqlDataAdapter(query1, this.Connection());
-       //     da.Fill(dtbl);
-       //     return dtbl;
-       // }
+        //    MySqlDataAdapter da = new MySqlDataAdapter(query1, this.Connection());
+        //     da.Fill(dtbl);
+        //     return dtbl;
+        // }
 
     }
 

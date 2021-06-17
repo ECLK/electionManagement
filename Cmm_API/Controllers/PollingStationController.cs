@@ -38,6 +38,13 @@ namespace Cmm_API.Controllers
             return obj;
         }
 
-       
+
+        [HttpGet]
+        public object GetPollingStationsTestAPI()
+        {
+            object obj = this.operation.GetPollingStationsTestAPI();
+            return obj;
+        }
+
     }
 }

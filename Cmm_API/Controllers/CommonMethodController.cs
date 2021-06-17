@@ -34,5 +34,71 @@ namespace Cmm_API.Controllers
 
             return pObj;
         }
+
+
+        public Province GetPartyDetails(List<DataRow> rows)
+        {
+            var pObj2 = new Province();
+            var admin = new List<AdminDistrict>();
+            var party = new List<Party>();
+
+            if (rows.Count > 0)
+            {
+                foreach (var row in rows)
+                {
+                    pObj2.province_name_en = row[0].ToString();
+
+                    var district = new AdminDistrict()
+                    {
+                        admin_dis_name_en = row[1].ToString(),
+                        ListofPartyModel = new List<Party>() {new Party() {
+                            party_name = row[2].ToString(), party_abbreviation = row[3].ToString(),
+                            party_symbol = row[4].ToString(), color = row[5].ToString(), } }
+                    };
+
+
+                    //var partydetails = new Party() { party_name = row[2].ToString(),party_abbreviation = row[3].ToString(),
+                    //    party_symbol= row[4].ToString(), color = row[5].ToString()};
+
+                    //party.Add(partydetails);
+                    admin.Add(district);
+
+                }
+
+                pObj2.ListofAdminDistrictModel = admin;
+
+            }
+            return pObj2;
+        }
+
+
+        public Province GetProvinceDetailsforPostalCountingAPI(List<DataRow> rows)
+        {
+            var pObj2 = new Province();
+            var admin = new List<AdminDistrict>();
+
+            if (rows.Count > 0)
+            {
+                foreach (var row in rows)
+                {
+                    pObj2.province_name_en = row[0].ToString();
+
+                    var district = new AdminDistrict()
+                    {
+                        admin_dis_name_en = row[1].ToString(),
+                        ListofDistrictCentreModel = new List<DistrictCentre>() {new DistrictCentre() {dc_name_en = row[2].ToString(),
+                        ListofCountingCentreModel = new List<CountingCentre>() { new CountingCentre() { cc_name_en = row[3].ToString(),
+                         vote_type = row[4].ToString() } } } }
+                    };
+
+                    admin.Add(district);
+
+                }
+
+                pObj2.ListofAdminDistrictModel = admin;
+            }
+
+            return pObj2;
+        }
     }
 }
